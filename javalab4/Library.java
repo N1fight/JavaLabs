@@ -65,7 +65,7 @@ public class Library {
         books.forEach(System.out::println);
     }
 
-    // Метод для вывода списока уникальных авторов
+    // Метод для вывода списка уникальных авторов
     public void printUniqueAuthors() {
         if (uniqueAuthors.isEmpty()) {
             System.out.println("There are no authors in the library.");
