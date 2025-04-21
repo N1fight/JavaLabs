@@ -14,7 +14,7 @@ public class Library {
         authorCounts = new HashMap<>();
     }
 
-    // Добавить книгу в библиотеку
+    // Метод для добавления книги в библиотеку
     public void addBook(Book book) {
         books.add(book);
         uniqueAuthors.add(book.getAuthor());
@@ -22,7 +22,7 @@ public class Library {
                         authorCounts.getOrDefault(book.getAuthor(), 0) + 1);
     }
 
-    // Удалить книгу из библиотеки
+    // Метод для удаления книги из библиотеки
     public void removeBook(Book book) {
         if (books.remove(book)) {
             // Уменьшаем счетчик книг автора
@@ -36,26 +36,26 @@ public class Library {
         }
     }
 
-    //  Найти все книги
+    //  Метод для нахождения количества книг
     public List<Book> getAllBooks() {
         return Collections.unmodifiableList(new ArrayList<>(books));
     }
 
-    // Найти все книги определенного автора
+    // Метод для нахождения всех книг определенного автора
     public List<Book> findBooksByAuthor(String author) {
         return books.stream()
                    .filter(book -> book.getAuthor().equals(author))
                    .collect(Collectors.toList());
     }
 
-    // Найти все книги, изданные в определенный год
+    // Метод для нахождения всех книг, изданных в определенный год
     public List<Book> findBooksByYear(int year) {
         return books.stream()
                    .filter(book -> book.getYear() == year)
                    .collect(Collectors.toList());
     }
 
-    // Вывести список всех книг в библиотеке
+    // Метод для вывода списка всех книг в библиотеке
     public void printAllBooks() {
         if (books.isEmpty()) {
             System.out.println("There are no books in the library.");
@@ -65,7 +65,7 @@ public class Library {
         books.forEach(System.out::println);
     }
 
-    // Вывести список уникальных авторов
+    // Метод для вывода списока уникальных авторов
     public void printUniqueAuthors() {
         if (uniqueAuthors.isEmpty()) {
             System.out.println("There are no authors in the library.");
@@ -75,7 +75,7 @@ public class Library {
         uniqueAuthors.forEach(System.out::println);
     }
 
-    // Вывести статистику по количеству книг каждого автора
+    // Метод для вывода статистики по количеству книг каждого автора
     public void printAuthorStatistics() {
         if (authorCounts.isEmpty()) {
             System.out.println("No data for statistics.");
