@@ -18,7 +18,7 @@ public class FinanceDB {
                 Statement stmt = con.createStatement();
                 System.out.print("Database connection established");
     
-                // Создание таблицы categories
+                
                 String sqlCategories = "CREATE TABLE IF NOT EXISTS categories (" +
                         "category_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "category_name TEXT NOT NULL UNIQUE," +
@@ -27,7 +27,7 @@ public class FinanceDB {
                         "notes TEXT);";
                 stmt.execute(sqlCategories);
     
-                // Создание таблицы expenses
+                
                 String sqlExpenses = "CREATE TABLE IF NOT EXISTS expenses (" +
                         "expense_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "category_id INTEGER NOT NULL," +
@@ -45,7 +45,7 @@ public class FinanceDB {
     }
     
 
-    // Методы для работы с категориями
+    
     public ArrayList<BudgetCategory> selectCategories() throws SQLException {
         ArrayList<BudgetCategory> categories = new ArrayList<>();
 
@@ -104,7 +104,7 @@ public class FinanceDB {
         System.out.println("Category updated successfully");
     }
 
-    // Методы для работы с расходами
+    
     public ArrayList<Expense> selectExpenseData(String categoryName) throws SQLException {
         ArrayList<Expense> expenses = new ArrayList<>();
 
